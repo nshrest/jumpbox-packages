@@ -1,0 +1,54 @@
+#!/bin/bash
+set -eu
+
+# fly5
+sudo wget https://github.com/concourse/concourse/releases/download/v5.0.0/fly-5.0.0-linux-amd64.tgz -O /usr/local/bin/fly5
+sudo chmod 755 /usr/local/bin/fly5
+
+# fly4
+sudo wget https://github.com/concourse/concourse/releases/download/v4.2.2/fly_linux_amd64 -O /usr/local/bin/fly4
+sudo chmod 755 /usr/local/bin/fly4
+
+# om-linux
+sudo wget https://github.com/pivotal-cf/om/releases/download/0.54.0/om-linux -O /usr/local/bin/om
+sudo chmod 755 /usr/local/bin/om
+
+# tile-config-generator
+sudo wget https://github.com/pivotalservices/tile-config-generator/releases/download/v0.0.14/tile-config-generator-linux -O /usr/local/bin/tile-config-generator
+sudo chmod 755 /usr/local/bin/tile-config-generator
+
+# yaml-patch
+sudo wget https://github.com/krishicks/yaml-patch/releases/download/v0.0.10/yaml_patch_linux -O /usr/local/bin/yaml-patch
+sudo chmod 755 /usr/local/bin/yaml-patch
+
+# yaml-diff
+sudo wget https://github.com/sahilm/yamldiff/releases/download/0.1.0/yamldiff-v0.1.0-linux-amd64 -O /usr/local/bin/yaml-diff
+sudo chmod 755 /usr/local/bin/yaml-diff
+
+# cliaas
+sudo wget https://github.com/pivotal-cf/cliaas/releases/download/v0.2.7/cliaas-linux -O /usr/local/bin/cliaas
+sudo chmod 755 /usr/local/bin/cliaas
+
+# gron
+wget https://github.com/tomnomnom/gron/releases/download/v0.6.0/gron-linux-amd64-0.6.0.tgz -O /tmp/gron.tgz
+sudo tar zxvf /tmp/gron.tgz -C /usr/local/bin/
+sudo chmod 755 /usr/local/bin/gron
+
+# minio
+sudo wget https://dl.minio.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio
+sudo chmod 755 /usr/local/bin/minio
+
+# mysql-client
+sudo apt-get install -y mysql-client 
+
+# kubectl
+sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+# pip3
+sudo apt install -y python3-pip
+#sudo pip3 install --upgrade pip
+
