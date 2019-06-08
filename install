@@ -2,7 +2,8 @@
 set -eu
 
 # fly5
-sudo wget https://github.com/concourse/concourse/releases/download/v5.2.0/fly-5.2.0-linux-amd64.tgz -O /usr/local/bin/fly5
+sudo wget https://github.com/concourse/concourse/releases/download/v5.2.0/fly-5.2.0-linux-amd64.tgz -O fly5.tgz && tar xvf fly5.tgz
+sudo mv fly5 /usr/local/bin/
 sudo chmod 755 /usr/local/bin/fly5
 
 # om-linux
