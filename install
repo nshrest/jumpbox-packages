@@ -2,8 +2,8 @@
 set -eu
 
 # fly5
-sudo wget https://github.com/concourse/concourse/releases/download/v5.2.0/fly-5.2.0-linux-amd64.tgz -O fly5.tgz && tar xvf fly5.tgz
-sudo mv fly5 /usr/local/bin/
+sudo wget https://github.com/concourse/concourse/releases/download/v5.2.0/fly-5.2.0-linux-amd64.tgz -O fly5.tgz && tar xvf fly5.tgz && rm -f fly5.tgz
+sudo mv fly /usr/local/bin/fly5
 sudo chmod 755 /usr/local/bin/fly5
 
 # om-linux
@@ -48,4 +48,33 @@ sudo apt-get install -y kubectl
 # pip3
 sudo apt install -y python3-pip
 #sudo pip3 install --upgrade pip
+
+# texplate
+sudo wget https://github.com/pivotal-cf/texplate/releases/download/v0.3.0/texplate_linux_amd64 -O /usr/local/bin/texplate
+sudo chmod 755 /usr/local/bin/texplate
+
+# tcpflood
+sudo wget https://github.com/nshrest/jumpbox-packages/releases/download/v1.0.0/tcpflood -O /usr/local/bin/tcpflood
+sudo chmod 755 /usr/local/bin/tcpflood
+
+# goblob
+sudo wget https://github.com/pivotal-cf/goblob/releases/download/v1.4.0/goblob-linux -O /usr/local/bin/goblob
+sudo chmod 755 /usr/local/bin/goblob
+
+# govc
+wget https://github.com/vmware/govmomi/releases/download/v0.20.0/govc_linux_amd64.gz -O govc_linux_amd64.gz
+gzip -d govc_linux_amd64.gz
+chmod +x govc_linux_amd64
+sudo mv govc_linux_amd64 /usr/local/bin/govc
+rm -f govc_linux_amd64.gz
+
+# vegeta (HTTP load testing tool and library)
+wget https://github.com/tsenart/vegeta/releases/download/cli%2Fv12.5.1/vegeta-12.5.1-linux-amd64.tar.gz -O vegeta.tar.gz
+tar zxvf vegeta.tar.gz
+chmod 755 vegeta
+sudo mv vegeta /usr/local/bin/vegeta
+rm -rf vegeta.tar.gz CHANGELOG LICENSE README.md
+
+# cfmenu
+git clone https://github.com/nshrest/pcf-admins ../pcf-admins
 
