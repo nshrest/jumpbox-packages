@@ -2,12 +2,8 @@
 set -eu
 
 # fly5
-sudo wget https://github.com/concourse/concourse/releases/download/v5.0.0/fly-5.0.0-linux-amd64.tgz -O /usr/local/bin/fly5
+sudo wget https://github.com/concourse/concourse/releases/download/v5.2.0/fly-5.2.0-linux-amd64.tgz -O /usr/local/bin/fly5
 sudo chmod 755 /usr/local/bin/fly5
-
-# fly4
-sudo wget https://github.com/concourse/concourse/releases/download/v4.2.2/fly_linux_amd64 -O /usr/local/bin/fly4
-sudo chmod 755 /usr/local/bin/fly4
 
 # om-linux
 sudo wget https://github.com/pivotal-cf/om/releases/download/0.54.0/om-linux -O /usr/local/bin/om
