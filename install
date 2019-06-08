@@ -45,9 +45,13 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 sudo apt-get update
 sudo apt-get install -y kubectl
 
+# python 2.7
+sudo sudo apt install python2.7 python-pip -y
+sudo pip2 install --upgrade pip
+
 # pip3
 sudo apt install -y python3-pip
-#sudo pip3 install --upgrade pip
+sudo pip3 install --upgrade pip
 
 # texplate
 sudo wget https://github.com/pivotal-cf/texplate/releases/download/v0.3.0/texplate_linux_amd64 -O /usr/local/bin/texplate
@@ -77,4 +81,12 @@ rm -rf vegeta.tar.gz CHANGELOG LICENSE README.md
 
 # cfmenu
 git clone https://github.com/nshrest/pcf-admins ../pcf-admins
+
+# url timings
+if [ ! -d ../url-timings ]; then
+  git clone https://github.com/kajic/url-timings ../url-timings
+  cd ../url-timings
+  sudo pip2 install gevent tabulate Cython docopt
+  cd -
+fi
 
