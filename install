@@ -38,13 +38,6 @@ sudo chmod 755 /usr/local/bin/minio
 # mysql-client
 sudo apt-get install -y mysql-client 
 
-# kubectl
-sudo apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubectl
-
 # python 2.7
 sudo sudo apt install python2.7 python-pip -y
 sudo pip2 install --upgrade pip
@@ -84,6 +77,14 @@ chmod 755 vegeta
 sudo mv vegeta /usr/local/bin/vegeta
 rm -rf vegeta.tar.gz CHANGELOG LICENSE README.md
 
+# kubectl
+sudo apt-get update
+sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
 # cfmenu
 git clone https://github.com/nshrest/pcf-admins ../pcf-admins
 
@@ -94,4 +95,5 @@ if [ ! -d ../url-timings ]; then
   sudo pip2 install gevent tabulate Cython docopt
   cd -
 fi
+
 
