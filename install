@@ -53,6 +53,11 @@ sudo pip2 install --upgrade pip
 sudo apt install -y python3-pip
 sudo pip3 install --upgrade pip
 
+# rabbitmq-collect-env 
+wget https://raw.githubusercontent.com/rabbitmq/support-tools/master/scripts/rabbitmq-collect-env 
+chmod 755 rabbitmq-collect-env
+sudo mv rabbitmq-collect-env /usr/local/bin/rabbitmq-collect-env
+
 # texplate
 sudo wget https://github.com/pivotal-cf/texplate/releases/download/v0.3.0/texplate_linux_amd64 -O /usr/local/bin/texplate
 sudo chmod 755 /usr/local/bin/texplate
