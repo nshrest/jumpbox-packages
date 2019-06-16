@@ -1,8 +1,10 @@
 #!/bin/bash
 set -eu
 
+pushd $(dirname "${BASH_SOURCE[0]}")
+
 # fly5
-sudo wget https://github.com/concourse/concourse/releases/download/v5.2.0/fly-5.2.0-linux-amd64.tgz -O fly5.tgz && tar xvf fly5.tgz && rm -f fly5.tgz
+sudo wget https://github.com/concourse/concourse/releases/download/v5.3.0/fly-5.3.0-linux-amd64.tgz -O fly5.tgz && tar xvf fly5.tgz && rm -f fly5.tgz
 sudo mv fly /usr/local/bin/fly5
 sudo chmod 755 /usr/local/bin/fly5
 
@@ -86,7 +88,9 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 
 # cfmenu
-git clone https://github.com/nshrest/pcf-admins ../pcf-admins
+if [ ! -d ../pcf-admins ];then
+  git clone https://github.com/nshrest/pcf-admins ../pcf-admins
+fi
 
 # url timings
 if [ ! -d ../url-timings ]; then
@@ -96,4 +100,5 @@ if [ ! -d ../url-timings ]; then
   cd -
 fi
 
+popd
 
