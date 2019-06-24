@@ -3,6 +3,11 @@ set -eu
 
 pushd $(dirname "${BASH_SOURCE[0]}")
 
+# bosh cli
+sudo wget https://github.com/cloudfoundry/bosh-cli/releases/download/v5.5.1/bosh-cli-5.5.1-linux-amd64 -O bosh
+sudo chmod 755 bosh
+sudo mv bosh /var/vcap/packages/jumpbox/bin/bosh
+
 # fly5
 sudo wget https://github.com/concourse/concourse/releases/download/v5.3.0/fly-5.3.0-linux-amd64.tgz -O fly5.tgz && tar xvf fly5.tgz && rm -f fly5.tgz
 sudo mv fly /usr/local/bin/fly5
