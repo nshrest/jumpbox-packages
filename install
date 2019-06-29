@@ -2,6 +2,8 @@
 set -eu
 
 pushd $(dirname "${BASH_SOURCE[0]}")
+# update
+sudo apt-get update
 
 # bosh cli
 sudo wget https://github.com/cloudfoundry/bosh-cli/releases/download/v5.5.1/bosh-cli-5.5.1-linux-amd64 -O bosh
@@ -85,7 +87,6 @@ sudo mv vegeta /usr/local/bin/vegeta
 rm -rf vegeta.tar.gz CHANGELOG LICENSE README.md
 
 # kubectl
-sudo apt-get update
 sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
