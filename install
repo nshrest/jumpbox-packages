@@ -106,5 +106,8 @@ if [ ! -d ../url-timings ]; then
   cd -
 fi
 
+# ldapsearch
+sudo apt install -y ldap-utils
+
 popd
 
