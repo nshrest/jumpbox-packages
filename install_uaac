@@ -1,0 +1,3 @@
+sudo rvm pkg install libyaml
+sudo rvm reinstall all --force
+sudo gem install cf-uaac
