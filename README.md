@@ -2,7 +2,7 @@
 uses this repo to install tools for the jumpbox deployment
 
 tools installed are
-- fly5 v5.2.0   (fly cli for interacting with concourse)
+- fly5 v5.4.0   (fly cli for interacting with concourse)
 - om-linux v0.54.0  (tool that helps you configure and deploy tiles to Ops-Manager.)
 - tile-config-generator v0.0.14  (Tooling to help externalize the configuration of Pivotal Operations Manager and it's various tiles.)
 - yaml-patch v0.0.10 (A library to apply YAML versions of RFC6902 patches)
@@ -22,3 +22,5 @@ tools installed are
 - vegeta v12.5.1 9HTTP load testing tool built out of a need to drill HTTP services with a constant request rate.)
 - cfmenu (cfmenu is a cli to admin and manage cloudfoundry foundations)
 - url-timings (Wraps curl to measure request times for a set of urls)
+
+
