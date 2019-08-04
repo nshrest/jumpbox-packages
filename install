@@ -97,6 +97,10 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 sudo apt-get update
 sudo apt-get install -y kubectl
 
+# kustomize
+sudo wget https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64 -O /usr/local/bin/kustomize
+sudo  +x /usr/local/bin/kustomize
+
 # cfmenu
 if [ ! -d ../pcf-admins ];then
   git clone https://github.com/nshrest/pcf-admins ../pcf-admins
