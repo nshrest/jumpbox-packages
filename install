@@ -2,6 +2,7 @@
 set -eu
 
 pushd $(dirname "${BASH_SOURCE[0]}")
+
 # update
 sudo apt-get update
 
